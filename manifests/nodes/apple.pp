@@ -48,9 +48,13 @@ node apple {
 		'/etc/httpd/conf.d/puppetd.conf':
 			require => File['/etc/httpd/conf.d'],
 			notify => Service['httpd'];
-	}
 
-	remotefolder {
-		'/etc/puppet': ;
+		['/etc/puppet/auth.conf', '/etc/puppet/autosign.conf', '/etc/puppet/fileserver.conf']:
+			require => Package['puppet'],
+			notify => Service['httpd'];
+
+		'/usr/share/puppet/rack/puppetmasterd/config.ru':
+			require => File['/usr/share/puppet/rack/puppetmasterd'],
+			notify => Service['httpd'];
 	}
 }
