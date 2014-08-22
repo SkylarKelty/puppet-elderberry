@@ -54,6 +54,8 @@ node apple {
 			notify => Service['httpd'];
 
 		'/usr/share/puppet/rack/puppetmasterd/config.ru':
+			owner => 'puppet',
+			group => 'puppet',
 			require => File['/usr/share/puppet/rack/puppetmasterd'],
 			notify => Service['httpd'];
 	}
