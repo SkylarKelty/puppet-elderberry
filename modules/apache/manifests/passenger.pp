@@ -7,6 +7,7 @@ class apache::passenger {
 	file {
 		'/etc/httpd/conf.d/10-passenger.conf':
 			ensure => present,
-			source => 'puppet:///modules/apache/passenger.conf';
+			source => 'puppet:///modules/apache/passenger.conf',
+			notify => Service['httpd'];
 	}
 }

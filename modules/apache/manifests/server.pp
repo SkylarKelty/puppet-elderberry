@@ -17,6 +17,7 @@ class apache::server {
 
 		'/etc/httpd/conf/httpd.conf':
 			ensure => present,
-			source => 'puppet:///modules/apache/httpd.conf';
+			source => 'puppet:///modules/apache/httpd.conf',
+			notify => Service['httpd'];
 	}
 }
