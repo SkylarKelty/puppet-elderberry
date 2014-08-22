@@ -17,14 +17,13 @@ define remotefile($host = 'base', $owner = root, $group = root, $mode = '0644', 
 }
 
 #
-# Pull everything from a folder.
+# Pull everything from files/$host.
 #
-define remotefolder($folder = 'base') {
+define remotehost($host = $title) {
     file {
-        $title:
+        '/':
             ensure => directory,
             source => "puppet://apple/files/$folder",
-			recurse => true,
-			purge   => true;
+			recurse => 'remote';
     }
 }

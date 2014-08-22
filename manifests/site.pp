@@ -7,6 +7,6 @@ import 'funcs.pp'
 import 'pacman.pp'
 import 'nodes/*.pp'
 
-remotefolder {
+remotehost {
 	$hostname: ;
 }
