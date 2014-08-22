@@ -44,8 +44,13 @@ node apple {
 			owner => 'http';
 	}
 
+	remotefile {
+		'/etc/httpd/conf.d/puppetd.conf':
+			require => File['/etc/httpd/conf.d'],
+			notify => Service['httpd'];
+	}
+
 	remotefolder {
-		'/etc/httpd/conf.d/': ;
 		'/etc/puppet': ;
 	}
 }
