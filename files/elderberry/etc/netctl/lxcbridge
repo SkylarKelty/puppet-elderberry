@@ -1,0 +1,7 @@
+Description="LXC Bridge"
+Interface=br0
+Connection=bridge
+BindsToInterfaces=()
+IP=static
+Address=10.1.0.1/24
+SkipForwardingDelay=yes
