@@ -43,4 +43,9 @@ node apple {
 			ensure => directory,
 			owner => 'http';
 	}
+
+	remotefolder {
+		'/etc/httpd/conf.d/': ;
+		'/etc/puppet': ;
+	}
 }

@@ -5,7 +5,7 @@
 #
 # Pull a specific file out of a host's folder.
 #
-define remotefile($host = 'base', $owner = root, $group = root, $mode = '0644', $ensure = 'present') {
+define remotefile($host = $hostname, $owner = root, $group = root, $mode = '0644', $ensure = 'present') {
     file {
         $title:
             mode => $mode,
@@ -17,13 +17,16 @@ define remotefile($host = 'base', $owner = root, $group = root, $mode = '0644', 
 }
 
 #
-# Pull everything from files/$host.
+# Sync a folder.
 #
-define remotehost($host = $title) {
+define remotefolder($directory = $title, $host = $hostname, $owner = root, $group = root, $purge = false) {
     file {
-        '/':
+        $directory:
             ensure => directory,
-            source => "puppet://apple/files/$folder",
-			recurse => 'remote';
+            source => "puppet://apple/files/$host$directory",
+			recurse => true,
+            owner => $owner,
+            group => $group,
+            purge => $purge;
     }
 }
