@@ -21,10 +21,11 @@ define remotefile($host = $hostname, $owner = root, $group = root, $mode = '0644
 #
 define remotefolder($directory = $title, $host = $hostname, $owner = root, $group = root, $purge = false) {
     file {
-        $directory:
+        "sync-$directory":
+            path => $directory,
             ensure => directory,
             source => "puppet://apple/files/$host$directory",
-			recurse => true,
+            recurse => true,
             owner => $owner,
             group => $group,
             purge => $purge;
