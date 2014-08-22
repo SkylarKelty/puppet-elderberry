@@ -34,9 +34,13 @@ node apple {
 			'/usr/share/puppet',
 			'/usr/share/puppet/rack',
 			'/usr/share/puppet/rack/puppetmasterd',
-			'/usr/share/puppet/rack/puppetmasterd/public',
-			'/usr/share/puppet/rack/puppetmasterd/tmp'
+			'/usr/share/puppet/rack/puppetmasterd/public'
 		]:
 			ensure => directory;
+
+
+		'/usr/share/puppet/rack/puppetmasterd/tmp':
+			ensure => directory,
+			owner => 'http';
 	}
 }
