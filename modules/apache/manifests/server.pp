@@ -10,4 +10,13 @@ class apache::server {
 			enable => true,
 			require => Package['apache'];
 	}
+
+	file {
+		'/etc/httpd/conf.d':
+			ensure => directory;
+
+		'/etc/httpd/conf/httpd.conf':
+			ensure => present,
+			source => 'puppet:///modules/apache/passenger.conf';
+	}
 }
