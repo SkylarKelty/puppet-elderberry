@@ -3,4 +3,5 @@
 #
 node pumpkin {
 	include base::common
+	include service::nginx
 }
