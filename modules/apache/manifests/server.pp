@@ -19,5 +19,10 @@ class apache::server {
 			ensure => present,
 			source => 'puppet:///modules/apache/httpd.conf',
 			notify => Service['httpd'];
+
+		'/etc/httpd/conf.d/5-security.conf':
+			ensure => present,
+			source => 'puppet:///modules/apache/security.conf',
+			notify => Service['httpd'];
 	}
 }
