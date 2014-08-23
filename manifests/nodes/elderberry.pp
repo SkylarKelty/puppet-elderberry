@@ -2,6 +2,7 @@
 # Elderberry is our host
 #
 node elderberry {
+	include base::common
 	include service::ntpd
 	include service::iptables
 	include service::puppet

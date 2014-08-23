@@ -2,6 +2,7 @@
 # Apple is our Puppet master.
 #
 node apple {
+	include base::common
 	include apache::server
 	include apache::passenger
 
