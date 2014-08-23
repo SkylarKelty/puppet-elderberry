@@ -12,11 +12,7 @@ class service::nginx {
 	}
 
 	file {
-		'/etc/nginx/conf.d':
-			ensure => directory;
-
-		'/var/log/nginx':
-			owner => 'http',
+		['/etc/nginx/conf.d', '/var/log/nginx']:
 			ensure => directory;
 
 		'/etc/nginx/nginx.conf':
