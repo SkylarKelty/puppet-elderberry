@@ -1,4 +1,4 @@
-class mariadb {
+class service::mariadb {
     package {
         'mariadb':
             ensure => present;
