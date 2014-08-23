@@ -5,8 +5,8 @@ class base::hosts {
 		#
 		'elderberry':
 			comment => 'VM Host',
-			ip => '172.31.2.176',
-			host_aliases => 'elderberry.xand.co.uk';
+			ip => '172.31.2.176', #217.169.22.166
+			host_aliases => ['elderberry.xand.co.uk', 'elderberry.skelty.uk'];
 
 		#
 		# Base Servers
