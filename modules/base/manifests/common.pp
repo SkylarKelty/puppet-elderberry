@@ -5,7 +5,9 @@ class base::common {
 	include base::hosts
 	include base::sudo
 
-	include service::puppet
+	if $hostname != 'apple' {
+		include service::puppet
+	}
 	include service::sshd
 
 	include user::sk
