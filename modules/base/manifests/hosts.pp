@@ -21,5 +21,12 @@ class base::hosts {
 		'cranberry':
 			comment => 'Puppet Dashboard',
 			ip => '10.1.0.15';
+
+		#
+		# Data Servers
+		#
+		'kiwi':
+			comment => 'MariaDB',
+			ip => '10.1.0.21';
 	}
 }
