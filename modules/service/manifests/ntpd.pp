@@ -1,4 +1,4 @@
-class service::ntps {
+class service::ntpd {
 	package {
 		'ntp':
 			ensure => present;
