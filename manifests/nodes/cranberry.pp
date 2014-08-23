@@ -12,6 +12,12 @@ node cranberry {
 			ensure => present;
 	}
 
+	service {
+		'puppetdwd':
+			ensure => true,
+			enable => true;
+	}
+
 	vcsrepo {
 		'/opt/puppet-dashboard':
 			ensure   => latest,
@@ -21,5 +27,9 @@ node cranberry {
 
 	remotefile {
 		'/etc/httpd/conf.d/puppetdashboard.conf': ;
+		'/usr/lib/systemd/system/puppetdwd.service': ;
+
+		'/usr/bin/puppetdwd':
+			mode => 0755;
 	}
 }

@@ -1,0 +1,13 @@
+[Unit]
+Description=Puppet Dashboard Workers Service
+After=network.target
+
+[Service]
+Type=forking
+User=http
+ExecStart=/usr/bin/puppetdwd
+Restart=on-abort
+PIDFile=/run/puppet/dwd.pid
+
+[Install]
+WantedBy=multi-user.target

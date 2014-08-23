@@ -1,0 +1,6 @@
+#!/bin/bash
+export RAILS_ENV='production'
+export PATH="/opt/puppet-dashboard/vendor/bundle/ruby/2.1.0/bin:$PATH"
+export GEM_PATH="/opt/puppet-dashboard/vendor/bundle/ruby/2.1.0"
+cd /opt/puppet-dashboard/
+/usr/bin/ruby /opt/puppet-dashboard/script/delayed_job -p dashboard -n 1 -m start
