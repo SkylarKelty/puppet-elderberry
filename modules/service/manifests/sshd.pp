@@ -21,5 +21,9 @@ class service::sshd {
         '/etc/ssh/sshd_banner':
             ensure => present,
             content => template('service/banner.erb');
+
+        '/etc/motd':
+            ensure => present,
+            content => template('service/motd.erb');
     }
 }
