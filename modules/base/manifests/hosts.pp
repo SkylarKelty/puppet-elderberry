@@ -14,10 +14,16 @@ class base::hosts {
 		'apple':
 			comment => 'Puppet Master',
 			ip => '10.1.0.2';
+		'lemon':
+			comment => 'SSH Gateway',
+			ip => '10.1.0.3';
 
 		#
 		# Web Servers
 		#
+		'pumpkin':
+			comment => 'Web Router (NGINX)',
+			ip => '10.1.0.10';
 		'cranberry':
 			comment => 'Puppet Dashboard',
 			ip => '10.1.0.15';
