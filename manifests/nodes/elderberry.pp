@@ -10,7 +10,8 @@ node elderberry {
 	remotefile {
 		'/etc/netctl/lxcbridge': ;
 		'/etc/sysctl.d/40-ip-forward.conf': ;
-		'/etc/system.d/system/network@.service': ;
 		'/usr/share/lxc/templates/lxc-archlinux': ;
+		'/etc/system.d/system/network.service':
+			realname => '/etc/system.d/system/network@.service';
 	}
 }
