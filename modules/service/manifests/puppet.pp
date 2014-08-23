@@ -14,6 +14,8 @@ class service::puppet ($master = false) {
 	}
 
 	file {
+		'/etc/puppet.conf':
+			ensure => absent;
 		'/etc/puppet/puppet.conf':
 			ensure => present,
 			content => template('service/puppet.conf.erb'),

@@ -73,8 +73,8 @@ split_string() {
 configure_arch() {
     # on ArchLinux, read defaults from host systemd configuration
     if [ "${is_arch}" ]; then
-        cp -p /etc/vconsole.conf /etc/locale.conf /etc/locale.gen /etc/hosts /etc/puppet/puppet.conf \
-        "${rootfs_path}/etc/"
+        cp -p /etc/vconsole.conf /etc/locale.conf /etc/locale.gen /etc/hosts "${rootfs_path}/etc/"
+        cp -p /etc/puppet/puppet.conf "${rootfs_path}/etc/puppet"
     else
         echo "LANG=${default_lang}" > "${rootfs_path}/etc/locale.conf"
         echo "KEYMAP=us" > "${rootfs_path}/etc/vconsole.conf"
