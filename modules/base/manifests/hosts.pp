@@ -3,10 +3,10 @@ class base::hosts {
 		#
 		# VM Hosts
 		#
-		'elderberry.xand.co.uk':
+		'elderberry':
 			comment => 'VM Host',
 			ip => '172.31.2.176',
-			host_aliases => 'elderberry';
+			host_aliases => 'elderberry.xand.co.uk';
 
 		#
 		# Base Servers
@@ -16,7 +16,8 @@ class base::hosts {
 			ip => '10.1.0.2';
 		'lemon':
 			comment => 'SSH Gateway',
-			ip => '10.1.0.3';
+			ip => '10.1.0.3',
+			host_aliases => 'lemon.skelty.uk';
 
 		#
 		# Web Servers
