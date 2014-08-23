@@ -10,6 +10,7 @@ node elderberry {
 	remotefile {
 		'/etc/netctl/lxcbridge': ;
 		'/etc/sysctl.d/40-ip-forward.conf': ;
-		'/usr/share/lxc/templates/lxc-archlinux': ;
+		'/usr/share/lxc/templates/lxc-archlinux':
+			mode => 0755;
 	}
 }
