@@ -4,4 +4,9 @@
 node pumpkin {
 	include base::common
 	include service::nginx
+
+	remotefile {
+		'/etc/nginx/conf.d/dashboard.skelty.uk.conf':
+			notify => Service['nginx'];
+	}
 }
