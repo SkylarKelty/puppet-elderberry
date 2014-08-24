@@ -44,4 +44,8 @@ class apache::standard {
 			content => template('apache/which.html.erb'),
 			require => File['/var/www/vhosts'];
 	}
+
+	apache::vhost {
+		'www': ;
+	}
 }
