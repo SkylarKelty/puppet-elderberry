@@ -1,25 +1,25 @@
 #
-# git.skelty.uk
+# <%= @subdomain %>.skelty.uk
 #
 
 server {
-	server_name git.skelty.uk;
+	server_name <%= @subdomain %>.skelty.uk;
 	return 301 https://$host$request_uri;
 }
 
 server {
     listen 443 ssl;
-	server_name git.skelty.uk;
+	server_name <%= @subdomain %>.skelty.uk;
 
-    ssl_certificate     /etc/ssl/git.skelty.uk/fullchain.crt;
-    ssl_certificate_key /etc/ssl/git.skelty.uk/ssl.key;
+    ssl_certificate     /etc/ssl/<%= @subdomain %>.skelty.uk/fullchain.crt;
+    ssl_certificate_key /etc/ssl/<%= @subdomain %>.skelty.uk/ssl.key;
     ssl_protocols       SSLv3 TLSv1 TLSv1.1 TLSv1.2;
     ssl_ciphers         HIGH:!aNULL:!MD5;
 
-	access_log /var/log/nginx/git.skelty.uk-443-access_log  main;
+	access_log /var/log/nginx/<%= @subdomain %>.skelty.uk-443-access_log  main;
 
 	location / {
-		proxy_pass http://pineberry;
+		proxy_pass http://<%= @server %>;
 		proxy_redirect     off;
 		proxy_set_header   Host              $host;
 		proxy_set_header   X-Real-IP         $remote_addr;
