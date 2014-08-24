@@ -25,6 +25,18 @@ class base::hosts {
 		'pumpkin':
 			comment => 'Web Router (NGINX)',
 			ip => '10.1.0.10';
+		'strawberry':
+			comment => 'Web Core 1 (Apache/PHP)',
+			ip => '10.1.0.11';
+		'blackberry':
+			comment => 'Web Core 2 (Apache/PHP)',
+			ip => '10.1.0.12';
+		'pineberry':
+			comment => 'Gitlab',
+			ip => '10.1.0.13';
+		'gooseberry':
+			comment => 'Redmine',
+			ip => '10.1.0.14';
 		'cranberry':
 			comment => 'Puppet Dashboard',
 			ip => '10.1.0.15';
