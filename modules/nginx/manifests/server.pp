@@ -1,4 +1,4 @@
-class service::nginx {
+class nginx::server {
 	package {
 		'nginx':
 			ensure => present;
@@ -18,6 +18,11 @@ class service::nginx {
 		'/etc/nginx/nginx.conf':
 			ensure => present,
 			source => 'puppet:///modules/service/nginx.conf',
+			notify => Service['nginx'];
+
+		'/etc/nginx/conf.d/5-upstream.conf':
+			ensure => present,
+			source => 'puppet:///modules/service/conf.d/5-upstream.conf',
 			notify => Service['nginx'];
 	}
 }
