@@ -17,13 +17,17 @@ class service::sshd {
             source => 'puppet:///modules/service/sshd_config',
             require => Package['openssh'],
             notify => Service['sshd'];
+    }
 
-        '/etc/ssh/sshd_banner':
-            ensure => present,
-            content => template('service/banner.erb');
+    if $hostname != 'pineberry' {
+        file {
+            '/etc/ssh/sshd_banner':
+                ensure => present,
+                content => template('service/banner.erb');
 
-        '/etc/motd':
-            ensure => present,
-            content => template('service/motd.erb');
+            '/etc/motd':
+                ensure => present,
+                content => template('service/motd.erb');
+        }
     }
 }
