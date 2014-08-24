@@ -20,6 +20,11 @@ class apache::standard {
 			ensure => present,
 			source => 'puppet:///modules/apache/which.conf',
 			notify => Service['httpd'];
+
+		'/etc/httpd/conf.d/15-apache-webcore.conf':
+			ensure => present,
+			source => 'puppet:///modules/apache/apache-webcore.conf',
+			notify => Service['httpd'];
 	}
 
 	file {
