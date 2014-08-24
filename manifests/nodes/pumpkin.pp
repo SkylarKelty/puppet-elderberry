@@ -3,7 +3,7 @@
 #
 node pumpkin {
 	include base::common
-	include service::nginx
+	include nginx::server
 
 	nginx::route {
 		'www': ;
