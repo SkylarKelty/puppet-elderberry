@@ -11,7 +11,10 @@ class packages::sudo {
 
 	file {
 		'/etc/sudoers.d/groups.conf':
+			ensure => absent;
+
+		'/etc/sudoers.d/5-groups':
 			ensure => present,
-			source => 'puppet:///modules/packages/sudo/groups.conf';
+			source => 'puppet:///modules/packages/sudo/groups';
 	}
 }
