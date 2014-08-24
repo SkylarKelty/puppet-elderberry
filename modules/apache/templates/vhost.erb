@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+    ServerName <%= @url %>
+    ErrorLog /var/log/www/<%= @url %>-80-error_log
+    CustomLog /var/log/www/<%= @url %>-80-access_log common
+
+    Alias /fcgi-bin/ /srv/http/fcgi-bin.d/<%= @webuser %>/
+
+    DocumentRoot /var/www/vhosts/<%= @url %>/public
+    SuexecUserGroup <%= @webuser %> w3
+    AddHandler php-fcgi .php
+</VirtualHost>

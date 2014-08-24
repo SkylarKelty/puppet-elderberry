@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export PHP_FCGI_MAX_REQUESTS=1500
+export PHP_FCGI_CHILDREN=2
+
+exec /usr/bin/php-cgi -d 'session.save_path=/var/www/vhosts/<%= @url %>/writable/sessions' -d include_path=/var/www/vhosts/<%= @url %>/app/
