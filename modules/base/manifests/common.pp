@@ -3,7 +3,6 @@
 #
 class base::common {
 	include base::hosts
-	include base::sudo
 
 	if $hostname != 'apple' {
 		include service::puppet
@@ -13,5 +12,6 @@ class base::common {
 	include user::sk
 
 	include packages::base
+	include packages::sudo
 	include packages::vim
 }
