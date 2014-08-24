@@ -17,12 +17,12 @@ class nginx::server {
 
 		'/etc/nginx/nginx.conf':
 			ensure => present,
-			source => 'puppet:///modules/service/nginx.conf',
+			source => 'puppet:///modules/nginx/nginx.conf',
 			notify => Service['nginx'];
 
 		'/etc/nginx/conf.d/5-upstream.conf':
 			ensure => present,
-			source => 'puppet:///modules/service/conf.d/5-upstream.conf',
+			source => 'puppet:///modules/nginx/conf.d/5-upstream.conf',
 			notify => Service['nginx'];
 	}
 }
