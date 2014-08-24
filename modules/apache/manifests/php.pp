@@ -34,20 +34,36 @@ class apache::php {
 			require => Package['php'],
 			notify => Service['httpd'];
 
-		'/etc/php/conf.d/10-modules.conf':
+		'/etc/php/conf.d/10-modules.ini':
 			ensure => present,
-			source => 'puppet:///modules/apache/php-modules.conf',
+			source => 'puppet:///modules/apache/php-modules.ini',
 			require => Package['php'],
 			notify => Service['httpd'];
 
-		'/etc/php/conf.d/20-defaults.conf':
+		'/etc/php/conf.d/20-defaults.ini':
 			ensure => present,
-			source => 'puppet:///modules/apache/php-defaults.conf',
+			source => 'puppet:///modules/apache/php-defaults.ini',
+			require => Package['php'],
+			notify => Service['httpd'];
+
+		'/etc/php/conf.d/50-mongo.ini':
+			ensure => present,
+			source => 'puppet:///modules/apache/php-mongo.ini',
 			require => Package['php'],
 			notify => Service['httpd'];
 
 		'/srv/http/fcgi-bin.d':
 			ensure => 'directory',
 			require => Package['apache'];
+
+		# Package managers install these, we want to use the numbering
+		# scheme though.
+		[
+			'/etc/php/conf.d/geoip.ini',
+			'/etc/php/conf.d/memcached.ini',
+			'/etc/php/conf.d/memcache.ini',
+			'/etc/php/conf.d/mongo.ini'
+		]:
+			ensure => absent;
 	}
 }
