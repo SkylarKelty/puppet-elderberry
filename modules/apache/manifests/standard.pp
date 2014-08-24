@@ -18,12 +18,12 @@ class apache::standard {
 	file {
 		'/etc/httpd/conf.d/15-which.conf':
 			ensure => present,
-			source => 'puppet:///modules/apache/which.conf',
+			source => 'puppet:///modules/apache/apache-which.conf',
 			notify => Service['httpd'];
 
-		'/etc/httpd/conf.d/15-apache-webcore.conf':
+		'/etc/httpd/conf.d/15-standard.conf':
 			ensure => present,
-			source => 'puppet:///modules/apache/apache-webcore.conf',
+			source => 'puppet:///modules/apache/apache-standard.conf',
 			notify => Service['httpd'];
 	}
 

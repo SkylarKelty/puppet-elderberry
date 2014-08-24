@@ -24,7 +24,7 @@ class apache::php {
 	file {
 		'/etc/httpd/conf.d/10-fcgid.conf':
 			ensure => present,
-			source => 'puppet:///modules/apache/fcgid.conf',
+			source => 'puppet:///modules/apache/apache-fcgid.conf',
 			require => Package['apache', 'mod_fcgid'],
 			notify => Service['httpd'];
 

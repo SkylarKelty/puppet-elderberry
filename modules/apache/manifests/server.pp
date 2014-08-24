@@ -22,7 +22,7 @@ class apache::server {
 
 		'/etc/httpd/conf.d/5-security.conf':
 			ensure => present,
-			source => 'puppet:///modules/apache/security.conf',
+			source => 'puppet:///modules/apache/apache-security.conf',
 			notify => Service['httpd'];
 	}
 }
