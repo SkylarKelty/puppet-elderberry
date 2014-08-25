@@ -1,7 +1,7 @@
 #
-# Elderberry is our host
+# Terra is our host
 #
-node elderberry {
+node terra {
 	include base::common
 	include service::ntpd
 	include service::iptables

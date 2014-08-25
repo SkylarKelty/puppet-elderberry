@@ -12,24 +12,24 @@ node apple {
 	}
 
 	vcsrepo {
-		'/opt/puppet-elderberry':
+		'/opt/puppet':
 			ensure   => latest,
 			provider => git,
-			source   => 'https://github.com/SkylarKelty/puppet-elderberry.git';
+			source   => 'gitlab@pineberry:sk/puppet.git';
 	}
 
 	file {
 		'/etc/puppet/files':
 			ensure => link,
-			target => '/opt/puppet-elderberry/files';
+			target => '/opt/puppet/files';
 
 		'/etc/puppet/manifests':
 			ensure => link,
-			target => '/opt/puppet-elderberry/manifests';
+			target => '/opt/puppet/manifests';
 
 		'/etc/puppet/modules':
 			ensure => link,
-			target => '/opt/puppet-elderberry/modules';
+			target => '/opt/puppet/modules';
 
 		[
 			'/usr/share/puppet',

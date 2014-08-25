@@ -3,10 +3,10 @@ class base::hosts {
 		#
 		# VM Hosts
 		#
-		'elderberry':
+		'terra':
 			comment => 'VM Host',
 			ip => '217.169.22.166',
-			host_aliases => ['elderberry.xand.co.uk', 'elderberry.skelty.uk'];
+			host_aliases => ['terra.xand.co.uk', 'terra.skelty.uk'];
 
 		#
 		# Base Servers
